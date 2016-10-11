@@ -1,0 +1,25 @@
+{
+  "name": "log-with-console",
+  "version": "0.0.1",
+  "description": "A simple logger which provides added information to log lines using standard console logging functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimalsudhan/node-log-with-console.git"
+  },
+  "keywords": [
+    "console-logger",
+    "logger",
+    "simple-logger",
+    "console.log"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vimalsudhan/node-log-with-console/issues"
+  },
+  "homepage": "https://github.com/vimalsudhan/node-log-with-console#readme"
+}
