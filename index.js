@@ -52,13 +52,13 @@ if(console && console.log){
     var oldTrace = console.trace;
 
     var getWorker=function(){
-    }
+    };
 
     var customLog = function(){
         arguments[0]=constructPattern() + arguments[0];
 //        arguments[0]="["+new Date().toString() + '] [' +getWorker()+ '] [' + getTrace()+"] "+ arguments[0];
         oldLog.apply(this, arguments);
-    }
+    };
 
     var getTrace=function(){
         try{
@@ -66,7 +66,7 @@ if(console && console.log){
         }catch(e){
             return "";
         }
-    }
+    };
 
     // new method in console to create empty lines
     console.emptyLines=function(lines){
@@ -74,15 +74,23 @@ if(console && console.log){
             lines=3;
 
         for(var i=0; i<lines; i++) oldLog("");
-    }
+    };
 
-    console.info = console.log = function(){
+    console.log = function(){
+        if(typeof arguments[0] == 'object')
+            Array.prototype.unshift.call(arguments, 'INFO ');
+        else
+            arguments[0]= 'LOG '+arguments[0];
+        customLog.apply(this,arguments);
+    };
+
+    console.info = function(){
         if(typeof arguments[0] == 'object')
             Array.prototype.unshift.call(arguments, 'INFO ');
         else
             arguments[0]= 'INFO '+arguments[0];
         customLog.apply(this,arguments);
-    }
+    };
 
     console.error = function(){
         if(typeof arguments[0] == 'object')
@@ -90,7 +98,7 @@ if(console && console.log){
         else
          arguments[0]= 'ERROR '+arguments[0];
         customLog.apply(this,arguments);
-    }
+    };
 
     console.warn = function(){
         if(typeof arguments[0] == 'object')
@@ -98,7 +106,8 @@ if(console && console.log){
         else
          arguments[0]= 'WARN '+arguments[0];
         customLog.apply(this,arguments);
-    }
+    };
+
 }
 
 var self=module.exports={
@@ -107,6 +116,6 @@ var self=module.exports={
         if(!Array.isArray(newPattern))
             newPattern=Array.from(arguments);
         setPattern(newPattern);
-    },
+    }
 
 };
