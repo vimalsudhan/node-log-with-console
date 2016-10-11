@@ -1,5 +1,12 @@
 # log-with-console
 
+## Table of Contents
+
+* [Install](#installing)
+* [Usage](#usage)
+* [Example](#example)
+* [Configuring Pattern](#configuring-pattern)
+
 ## Installing
 
 ```sh
@@ -35,7 +42,7 @@ Output:
 [Tue Oct 11 2016 13:31:26 GMT+0530 (IST)] [MASTER] [app.js:5:9] ERROR this is an error [Error: Error occurred]
 ```
 
-## Configuring Patterns
+## Configuring Pattern
 
 Pattern/Template layout on the log lines can be changed using `setPattern` method
 
