@@ -1,6 +1,6 @@
 {
   "name": "log-with-console",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple logger which provides added information to log lines using standard console logging functions",
   "main": "index.js",
   "scripts": {
